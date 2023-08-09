@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class HelloComponent {
-  @Input() name: string = '';
+  @Input() name: string = 'Nik';
   get runChangeDetection() {
     console.log('Checking the view hello');
     return true;

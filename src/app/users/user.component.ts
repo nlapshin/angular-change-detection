@@ -11,7 +11,7 @@ export class UserComponent {
   @Input() name: string = '';
 
   get runChangeDetection() {
-    console.log('Checking the view user');
+    console.log('Checking the view: user');
     return true;
   }
 }

@@ -6,7 +6,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
     <h1>Url {{config.url}}!</h1>
     {{runChangeDetection}}
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush, // По умолчанию Default
 })
 export class ConfigComponent {
   @Input() config = { url: '' };

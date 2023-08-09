@@ -1,27 +1,27 @@
 # Chdt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+queue -> очередь
 
-## Development server
+while(queue.hasTasks()) {
+  for (let task of queue.next()) {
+    task();
+  }
+}
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+task - синхронные и асинхронные.
+асинхронные:
+- взаимодействие с DOM.
+- события в DOM(click, нажатия на клавишу, скроллинг и т.д.).
+- таймеры.
+- сетевые запросы(HTTP, так и Websocket).
+- promises
 
-## Code scaffolding
+Позволяют нам немного управлять очередью.
+Микротаска: промисы. Это то, что мы можем подсунуть в тот же цикл.
+Макротаска: всегда на следующем цикле.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Мы хотим попрофилировать все асинхронные задачи.
+NodeJS мир, там есть такая возможность async_hooks.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+fetch - для получения данных -> подменяем fetch, где оставляем
+работу fetch как есть + добавляем какое-то профилирование.

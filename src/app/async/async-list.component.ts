@@ -40,3 +40,9 @@ export class AsyncListComponent {
     this.$users.next(this.users);
   }
 }
+
+
+// Внутри async pipe
+// if (oldValue !== newValue) {
+//   this.cdr.detectChanges();
+// }
